@@ -97,7 +97,7 @@ fig2.savefig("LA Lynchings Chart.png")
 #%%
 plt.rcParams["figure.dpi"] = 300
 fg = sns.lmplot(data = joined, x = "lynchings", y = "VoterRate")
-fg.set_axis_labels("Lynchings", "Black Voter Registration Rate in NC")
+fg.set_axis_labels("Lynchings", "Black Voter Registration Rate in LA")
 fg.figure.suptitle("The Impact of Lynchings on Black Voter Registration")
 fg.figure.tight_layout()
 fg.savefig("LA Lynchings Regression.png")
