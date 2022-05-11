@@ -18,8 +18,8 @@ import seaborn as sns
 
 import requests 
 
-fips = "22"
-po = "LA"
+fips = "01"
+po = "AL"
 
 api = 'https://api.census.gov/data/2018/acs/acs5'  
 

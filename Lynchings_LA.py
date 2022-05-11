@@ -21,11 +21,11 @@ import requests
 
 #Filters the states down the ones with lynchings
 Statemap = gpd.read_file("cb_2020_us_county_500k.zip")
-#States in this list - AL - TN
+#States in this list - AL - TN. Input the state's FIPS code here
 States = ["22"] 
 Statemap = Statemap[ Statemap['STATEFP'].isin(States)]
 Statemap["NAME"] = Statemap["NAME"].str.title()
-#Writes geopackage file
+#Writes geopackage file. This creats the heat map.
 Statemap.to_file("StatemapLA.gpkg", layer = "counties", index=False)
 ####
 Statemap.to_csv("StateMAP3.csv")
@@ -54,6 +54,7 @@ fig.savefig("LA_Votermap.PNG")
 joined = joined.merge(pop,on = "GEOID", indicator = True, how = "outer")
 print(joined["_merge"].value_counts())
 joined = joined.drop(columns = "_merge")
+#Divides lynchings by population of county in 2020, this calculates the lynch rate
 joined["VoterRate"] = 100*joined["BLACK"]/joined["B02001_003E"]
 
 Database = pd.read_excel("HAL.XLS", dtype=str)
@@ -61,7 +62,7 @@ Database["County"] = Database["County"].str.strip()
 
 fixup = pd.read_csv('fixup.csv')
 fixup = fixup.dropna(subset='fix_name')
-
+#Removes counties that had no history of lynchings or did not exist between 1880-1930
 Database = Database.query("County != 'Indeterminant'")
 Database = Database.query("County != 'Undetermined'")
 
@@ -82,9 +83,10 @@ db_counties = db_counties[["County","lynchings"]]
 joined = joined.merge(db_counties, left_on = "NAME", right_on = "County", indicator = True, how = "outer")
 print(joined["_merge"].value_counts())
 joined = joined.drop(columns = "_merge")
-#Tabulates lynchings per capita
+##Creates the regression plot between lynchings and Black voter registration.
 joined["lynchrate"] = 100*joined["lynchings"]/joined["B02001_003E"]
 #%%
+#Creates a scatter plot of lynchings vs. Black voter registration per county
 fig2, ax2 = plt.subplots(dpi=300) 
 fig2.suptitle("Lynchings by County Vs. Black Voter Registration Rate")
 joined.plot.scatter(x = "lynchings", y ="VoterRate", ax = ax2)
@@ -95,6 +97,7 @@ fig2.tight_layout()
 
 fig2.savefig("LA Lynchings Chart.png")
 #%%
+#Creates the regression plot between lynchings and Black voter registration.
 plt.rcParams["figure.dpi"] = 300
 fg = sns.lmplot(data = joined, x = "lynchings", y = "VoterRate")
 fg.set_axis_labels("Lynchings", "Black Voter Registration Rate in LA")

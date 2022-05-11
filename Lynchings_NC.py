@@ -50,6 +50,8 @@ fig.savefig("NC_Votermap.PNG")
 joined = joined.merge(pop,on = "GEOID", indicator = True, how = "outer")
 print(joined["_merge"].value_counts())
 joined = joined.drop(columns = "_merge")
+
+#Divides Black voter reg rate lynchings by population of county in 2020, this calculates the voter rate
 joined["VoterRate"] = 100*joined["Black"]/joined["B02001_003E"]
 
 Database = pd.read_excel("HAL.XLS", dtype=str)
@@ -57,7 +59,7 @@ Database["County"] = Database["County"].str.strip()
 
 fixup = pd.read_csv('fixup.csv')
 fixup = fixup.dropna(subset='fix_name')
-
+#Removes counties that had no history of lynchings or did not exist between 1880-1930
 Database = Database.query("County != 'Indeterminant'")
 Database = Database.query("County != 'Undetermined'")
 
@@ -91,6 +93,7 @@ fig2.tight_layout()
 
 fig2.savefig("AL Lynchings Chart.png")
 #%%
+#Creates the regression plot between lynchings and Black voter registration.
 plt.rcParams["figure.dpi"] = 300
 fg = sns.lmplot(data = joined, x = "lynchings", y = "VoterRate")
 fg.set_axis_labels("Lynchings", "Black Voter Registration Rate in NC")

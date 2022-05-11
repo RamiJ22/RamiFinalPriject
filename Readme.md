@@ -8,7 +8,7 @@ Honestly, I wasn't able to reproduce all of her results but I was able to reprod
 
 This first regression above is for Alabama. As you can see, within counties a history of more lynchings is associated with higher Black voter registration.
 
-![Louisiana Lynchings Regression]()
+![Louisiana Lynchings Regression](RegressionLynchingsLA.png)
 
 Here you can see that in Louisana, more lynchings within a county/parish are correlated with lower Black voter registration.
 ![North Carolina Lynchings Regression](RegressionLynchingsNC.png)
@@ -19,6 +19,8 @@ Below are the counties with the highest Black voter registration:
 
 ![Black Voter Registration Alabama](ALBlackVoterRegCounty.png)
 
-![Black Voter Registration Louisiana](RegressionLynchingsNC.png)
+![Black Voter Registration Louisiana](LA_Votermap.PNG)
 
-![Black Voter Registration North Carolina](RegressionLynchingsNC.png)
+![Black Voter Registration North Carolina](NC_Votermap.PNG)
+
+The data is mixed. Louisiana and Georgia both confirm my suspicions but North Carolina and Alabama do not. I would like to be optimistic and say that this is another example of Black folks doing what they want inspite of oppression.
