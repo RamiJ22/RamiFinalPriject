@@ -55,6 +55,12 @@ Inputs: FIPS Code, State Abbreviation, State Voter turnout data
 
 Outputs: Heat Map of Black voter registration per state, scatter plot of the impact of lynchings on Black voter registration and a regression analysis of the impact of lynchings on Black voter registration.
 
+## Other files
+
+The Black.csv files for each state helped me separate the Black vote from other types of voters. Most of the other files in this reposistory are largely examples of outputs or they're secondary files that are used to help find each state's results. Your main focus should be the Python files that help you choose a state to examine and the python files for each state.
+
+Heatmap files are test files for heatmaps, they work but you can ignore them.
+
 ## Limitations: 
 
 This is a very small project compared to my friend's research. This project only looks at the 2020 voter registration data and for only 3 states. My friend's research came to much different and stronger conclusions, please refer to her research if you're interested in learning more. I have provided the link below. 
