@@ -39,8 +39,15 @@ I was inspired by my good friend Dr. Jhacova's research on this topic and I want
 
 You can access voter registration data on the secretary of state's website for your chosen state. I've included the links for three states.
 
+Alabama -
 
+https://www.sos.alabama.gov/alabama-votes/voter/election-data
 
+Louisiana - https://www.sos.la.gov/ElectionsAndVoting/Pages/RegistrationStatisticsStatewide.aspx
+
+North Carolina - 
+
+https://vt.ncsbe.gov/RegStat/Results/?date=05%2F07%2F2022
 ## Inputs and Outputs:
 
 Inputs: FIPS Code, State Abbreviation, State Voter turnout data
@@ -74,4 +81,4 @@ Below are the counties with the highest Black voter registration:
 
 ![Black Voter Registration North Carolina](NC_Votermap.PNG)
 
-The data is mixed. Louisiana and Georgia both confirm my suspicions but North Carolina and Alabama do not. I would like to be optimistic and say that this is another example of Black folks doing what they want inspite of oppression.
+The data is mixed. Louisiana confirms my suspicions but North Carolina and Alabama do not. I would like to be optimistic and say that this is another example of Black folks doing what they want inspite of oppression. However, to get a full picture I would need to test more presidential years and include other control variables. 
