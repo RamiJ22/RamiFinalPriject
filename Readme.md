@@ -43,7 +43,8 @@ Alabama -
 
 https://www.sos.alabama.gov/alabama-votes/voter/election-data
 
-Louisiana - https://www.sos.la.gov/ElectionsAndVoting/Pages/RegistrationStatisticsStatewide.aspx
+Louisiana - 
+https://www.sos.la.gov/ElectionsAndVoting/Pages/RegistrationStatisticsStatewide.aspx
 
 North Carolina - 
 
